@@ -129,9 +129,6 @@ async function ensureDefaultProfile() {
 }
 
 function shouldShowEditor(active) {
-  // Editor nur sichtbar:
-  // - wenn explizit über "+" geöffnet
-  // - oder wenn Profil noch nicht konfiguriert ist (url/psk leer)
   if (editorForcedVisible) return true;
   if (!active) return false;
   return !active.url || !active.psk;
@@ -203,7 +200,6 @@ async function addProfile() {
   UI.setMsg("Profil hinzugefügt.");
   await renderProfiles();
 
-  // Cursor in Name
   UI.els.tvName.focus();
   UI.els.tvName.select();
 }
@@ -283,7 +279,6 @@ async function updateStatusOnce() {
     const { active } = await BraviaApi.getActiveProfile();
     UI.setStatusLine(active?.url ? BraviaApi.normalizeBaseUrl(active.url) : "Nicht konfiguriert");
 
-    // Editor-Sichtbarkeit dynamisch (z. B. nach Save)
     UI.showEditor(shouldShowEditor(active));
   } catch {
     UI.els.stPower.textContent = "—";

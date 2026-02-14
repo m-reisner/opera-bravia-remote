@@ -153,7 +153,6 @@ button.ok:hover {
   margin-top: 6px;
 }
 
-/* Profilzeile: Select + 3 Buttons nebeneinander */
 .profileRow {
   display: grid;
   grid-template-columns: 1fr auto auto auto;
@@ -161,7 +160,6 @@ button.ok:hover {
   align-items: center;
 }
 
-/* Icon-only Buttons */
 .iconbtn {
   padding: 0;
   width: 40px;
@@ -180,7 +178,6 @@ button.ok:hover {
   font-size: 18px;
 }
 
-/* Select + Buttons rechts daneben (Apps/Inputs) */
 .selectRow {
   display: grid;
   grid-template-columns: 1fr auto auto;
@@ -188,7 +185,6 @@ button.ok:hover {
   align-items: center;
 }
 
-/* Power-Status Farben */
 .power-on {
   background: var(--danger);
 }
@@ -203,5 +199,4 @@ button.ok:hover {
   background: var(--ok2);
 }
 
-/* Sichtbarkeit Editor */
 .hidden { display: none; }
