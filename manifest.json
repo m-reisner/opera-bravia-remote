@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Bravia Sidebar Remote",
+  "version": "1.1.0",
+  "description": "Opera Sidebar Remote Control for Sony Bravia TVs (Profiles, Status, Apps, Inputs, IRCC auto-load).",
+  "permissions": ["storage"],
+  "host_permissions": ["http://*/", "https://*/"],
+  "sidebar_action": {
+    "default_title": "Bravia Remote",
+    "default_panel": "sidebar.html"
+  },
+  "icons": {
+    "48": "icons/icon.png"
+  }
+}
