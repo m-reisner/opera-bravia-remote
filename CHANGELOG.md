@@ -7,7 +7,7 @@ This project adheres to Semantic Versioning.
 
 ---
 
-## [1.2.0] - 2026-02-14
+## [1.2.0] - 2026-02-22
 
 ### Changed
 Moved from MV2 to MV3
