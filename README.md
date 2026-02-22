@@ -22,3 +22,10 @@ TV URL and PSK are stored locally in browser storage.
 
 ## License
 MIT
+
+## Screenshots
+## Screenshots
+
+![Main UI](_resources/screenshot.png)
+
+![Settings](_resources/opera-bravia-remote_screenshot.png)
