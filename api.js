@@ -14,15 +14,37 @@ const BraviaApi = (() => {
     return url.trim().replace(/\/+$/, "");
   }
 
+  // -----------------------------
+  function storageGet(area, keys) {
+    return new Promise((resolve, reject) => {
+      const normalizedKeys = (typeof keys === "undefined") ? null : keys;
+      area.get(normalizedKeys, (result) => {
+        const err = chrome.runtime?.lastError;
+        if (err) reject(err);
+        else resolve(result || {});
+      });
+    });
+  }
+
+  function storageSet(area, items) {
+    return new Promise((resolve, reject) => {
+      area.set(items, () => {
+        const err = chrome.runtime?.lastError;
+        if (err) reject(err);
+        else resolve();
+      });
+    });
+  }
+
   async function getActiveProfile() {
-    const { profiles, activeProfileId } = await chrome.storage.local.get(["profiles", "activeProfileId"]);
+    const { profiles, activeProfileId } = await storageGet(chrome.storage.local, ["profiles", "activeProfileId"]);
     const list = Array.isArray(profiles) ? profiles : [];
     const active = list.find(p => p.id === activeProfileId) || list[0] || null;
     return { list, active };
   }
 
   async function setProfiles(profiles, activeProfileId) {
-    await chrome.storage.local.set({ profiles, activeProfileId });
+    await storageSet(chrome.storage.local, { profiles, activeProfileId });
   }
 
   function withTimeout(timeoutMs) {

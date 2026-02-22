@@ -7,6 +7,14 @@ This project adheres to Semantic Versioning.
 
 ---
 
+## [1.2.0] - 2026-02-14
+
+### Changed
+Moved from MV2 to MV3
+
+### Fixed
+Storage error.
+
 ## [1.1.0] - 2026-02-14
 
 ### Added
